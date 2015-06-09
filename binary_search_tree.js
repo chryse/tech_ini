@@ -5,7 +5,7 @@ function Node(data, left, right) {
 
 	this.show = function() {
 		return this.data;
-	}
+	} 
 }
 
 function BST() {
@@ -139,6 +139,62 @@ BST.prototype.levelOrder = function() {
 	}
 }
 
+BST.prototype.inOrder = function(node) {
+	if(node == null) return;
+	else {
+		this.inOrder(node.left);
+		console.log(node.show() + " ");
+		this.inOrder(node.right);
+	}
+}
+
+BST.prototype.preOrder = function(node) {
+	if(node == null) return;
+	else {
+		console.log(node.show() + " ");
+		this.preOrder(node.left);
+		this.preOrder(node.right);
+	}
+}
+
+BST.prototype.postOrder = function(node) {
+	if(node == null) return;
+	else {
+		this.postOrder(node.left);
+		this.postOrder(node.right);
+		console.log(node.show() + " ");
+	}
+}
+
+
+BST.prototype.checkBST = function() {
+	if(this.root == null) return null;
+
+	else {
+		var view = [this.root];
+		while(view.length > 0) {
+	  		var current = view[0];
+
+			if(current.left) {
+				if(current.data < current.left.data) {
+					return false;
+				}
+				view.push(current.left);
+			}
+
+			if(current.right) {
+				if(current.data > current.right.data) {
+					return false;
+				}
+				view.push(current.right);
+			}
+			view.shift();
+		}
+		return true;
+	}
+}
+
+
 var bst = new BST();
 bst.insert(65);
 bst.insert(23);
@@ -146,7 +202,17 @@ bst.insert(45);
 bst.insert(16);
 bst.insert(1);
 bst.insert(4);
+// bst.find(1);
+// bst.getMin();
+// bst.getMax();
+console.log(bst);
+console.log("inOrder==============");
+bst.inOrder(bst.root);
+console.log("preOrder==============");
+bst.preOrder(bst.root);
+console.log("postOrder==============");
+bst.postOrder(bst.root);
+console.log("levelOrder==============");
 bst.levelOrder();
-bst.find(1);
-bst.getMin();
-bst.getMax();
+console.log("checkBST==============");
+console.log(bst.checkBST());

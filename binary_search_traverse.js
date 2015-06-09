@@ -1,35 +1,35 @@
 var btree = {
-    value: 10,
+    data: 10,
     left: {
-        value: 5,
+        data: 5,
         left: {
-          value: 3,
+          data: 2,
           left: {
-            value: 1,
+            data: 1,
             left: null,
             right: null
           },
           right: {
-            value: 2,
+            data: 3,
             left: null,
             right: null
           }
         },
         right: {
-          value: 4,
+          data: 6,
           left: null,
           right: null
         }
       },
     right: {
-        value: 6,
+        data: 16,
         left: {
-          value: 5,
+          data: 5,
           left: null,
           right: null
         },
         right: {
-          value: 7,
+          data: 19,
           left: null,
           right: null
         }
@@ -38,7 +38,10 @@ var btree = {
 
 function search(tree) {
 
-  if(tree.value == null) return null;
+  if(tree.data == null) {
+    return null;
+  }
+
   else {
     var view = [tree];
     // console.log(view);
@@ -46,16 +49,29 @@ function search(tree) {
       var current = view[0];
 
       if(current.left) {
+        console.log("current.left.data:", current.left.data, " current.data:", current.data);
+        if(current.data < current.left.data) {
+          return false;
+        }
         view.push(current.left);
       }
       if(current.right) {
+        console.log("current.right.data:", current.right.data, " current.data:", current.data);
+        if(current.data > current.right.data) {
+          return false;
+        }
         view.push(current.right);
       }
-      console.log(view.shift());
-      console.log("=======");
+      console.log("view[0]", view[0]);
+      console.log("view.length", view.length);
+      view.shift();
+      // console.log(view.shift());
+      // console.log("=======");
       // console.log("view", view);
     }
+    return true;
   }
+  
 }
 
-search(btree);
+console.log(search(btree));

@@ -2,16 +2,14 @@ function palindrome(word) {
 	word = word.replace(/\W/g, "").toLowerCase();
 	var arr = word.split("");
 	var middle = Math.floor(arr.length / 2);
-	var isPalindrome = false;
 	console.log("word:", word, " middle:", middle);
 	for(var i = 0; i < middle; i++) {
 		console.log("i: ", i);
-		if(arr[i] == arr[arr.length-1-i]) {
-			isPalindrome = true;
+		if(arr[i] !== arr[arr.length-1-i]) {
+			return false;
 		}
-		//else isPalindrome = false;
 	}
-	return isPalindrome;
+	return true;
 }
 
 console.log(palindrome("dod"));
