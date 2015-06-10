@@ -5,7 +5,7 @@ function Node(data, left, right) {
 
 	this.show = function() {
 		return this.data;
-	} 
+	}
 }
 
 function BST() {
@@ -55,10 +55,10 @@ BST.prototype.removeNode = function(node, data) {
 			return node.left;
 		}
 
-		// nod has two childre
-		var tempNode = this.getSmallest(node.right);
-		node.data = tempNod.data;
-		node.right = this.removeNode(node.right, tempNode.data);
+		// node has two children
+		var tmpNode = this.getSmallest(node.right);
+		node.data = tmpNode.data;
+		node.right = this.removeNode(node.right, tmpNode.data);
 		return node;
 	}
 

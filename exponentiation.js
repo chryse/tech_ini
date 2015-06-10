@@ -45,7 +45,7 @@ function helper(a, b) {
 }
 
 // console.log(pow(4, 1));
-console.log(pow(-2, 10));
+console.log(pow(-2, 9));
 // console.log(pow(3, 2));
 // console.log(pow(3, -1));
 

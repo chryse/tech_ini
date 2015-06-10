@@ -5,7 +5,7 @@ function reverse(num) {
 	console.log("num", num);
 	while(num > 0) {
 		result += num % 10;
-		num = parseInt(num/10);
+		num = (num/10)^0;
 		// console.log("num:", num);
 	}
 

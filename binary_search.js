@@ -7,17 +7,14 @@ var input = 9;
 
 function binarySearch(arr, input) {
 	var middle = Math.floor(arr.length /2);
-	console.log("middle", middle);
 
 	if(arr[middle] == input) return input;
 
 	else if(arr[middle] > input && arr.length > 1) {
-		console.log("middle:", middle, " input:", input);
 		return binarySearch(arr.splice(0, middle), input);
 	}
 
 	else if(arr[middle] < input && arr.length > 1) {
-		console.log("middle:", middle, " input:", input);
 		return binarySearch(arr.splice(middle+1, arr.length), input);
 	}
 
