@@ -134,7 +134,7 @@ BST.prototype.levelOrder = function() {
 				queue.push(current.right);
 			}
 
-			console.log(queue.shift());
+			queue.shift();
 		}
 	}
 }
@@ -206,13 +206,13 @@ bst.insert(4);
 // bst.getMin();
 // bst.getMax();
 console.log(bst);
-console.log("inOrder==============");
-bst.inOrder(bst.root);
-console.log("preOrder==============");
-bst.preOrder(bst.root);
-console.log("postOrder==============");
-bst.postOrder(bst.root);
-console.log("levelOrder==============");
-bst.levelOrder();
-console.log("checkBST==============");
-console.log(bst.checkBST());
+// console.log("inOrder==============");
+// bst.inOrder(bst.root);
+// console.log("preOrder==============");
+// bst.preOrder(bst.root);
+// console.log("postOrder==============");
+// bst.postOrder(bst.root);
+// console.log("levelOrder==============");
+// bst.levelOrder();
+// console.log("checkBST==============");
+// console.log(bst.checkBST());

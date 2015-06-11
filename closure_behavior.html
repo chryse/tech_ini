@@ -1,21 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<style>
-		button {
-			/*width: 100px;
-			line-height: 30px;
-			background-color: red;
-			text-align: center;
-			border: 1px solid silver;
-			margin: 0 10px;*/
-
-		}
-
-	</style>
 </head>
 <body>
-<button onClick="timedText()">Display timed text</button>
+<button onclick="timedText()">Display timed text</button>
 <input type="text" id="txt">
 
 <script type="text/javascript">
@@ -26,8 +14,8 @@
 		button.innerHTML = "Button" + i;
 		(function(x) {
 			button.addEventListener('click', function(){
-				console.log(x); 
-			});	
+				console.log(x);
+			});
 		})(i);
 		//click(i);
 		document.body.appendChild(button);

@@ -71,7 +71,31 @@ function search(tree) {
     }
     return true;
   }
-  
+}
+
+function find(tree, data) {
+  var current = tree;
+
+  while(current && current.data !== data) {
+    if(current.data > data) {
+      current = current.left;
+    }
+    else {
+      current = current.right;
+    }
+  }
+
+  console.log(current);
+
+  if(current) {
+    return true;
+  }
+  else {
+    return false;
+  }
 }
 
 console.log(search(btree));
+
+console.log(find(btree, 9));
+
